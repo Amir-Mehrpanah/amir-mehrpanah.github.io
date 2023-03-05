@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: This a Title in _config.yml
+# title: This a Title in _config.yml
 email: amirmehrpanah@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   phd student in deep learning at kth.
 domain: amir-mehrpanah.github.io
 baseurl: /amir-mehrpanah # the subpath of your site, e.g. /blog
 url: https://amir-mehrpanah.github.io # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: test
+# twitter_username: test
 github_username:  amir-mehrpanah
 
 # Build settings
