@@ -21,7 +21,7 @@
 title: This a Title in _config.yml
 email: amirmehrpanah@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  this is a description in _config.yml
+  phd student in deep learning at kth.
 domain: amir-mehrpanah.github.io
 baseurl: /amir-mehrpanah # the subpath of your site, e.g. /blog
 url: https://amir-mehrpanah.github.io # the base hostname & protocol for your site, e.g. http://example.com
@@ -30,8 +30,8 @@ github_username:  amir-mehrpanah
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
+# plugins:
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
