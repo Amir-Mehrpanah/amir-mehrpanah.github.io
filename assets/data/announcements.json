@@ -1,0 +1,19 @@
+{
+  "limit": 2,
+  "items": [
+    {
+      "date": "Feb 22, 2026",
+      "type": "Announcement",
+      "title": "Welcome to the lab log",
+      "url": "blog/posts/2026-02-22-welcome/index.html",
+      "summary": "A short note about the direction of the PhD work and upcoming updates."
+    },
+    {
+      "date": "Feb 22, 2026",
+      "type": "Research Notes",
+      "title": "Signals, systems, and new questions",
+      "url": "blog/posts/2026-02-22-research-notes/index.html",
+      "summary": "Early notes on new experiments and models."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "limit": 2,
+  "items": [
+    {
+      "title": "Can we better explain classification with generative models?",
+      "year": "2026",
+      "subtitle": "Research Notes",
+      "type": "Post",
+      "url": "blog/posts/2026-02-22-generative-based-classification/index.html",
+      "summary": "Here I ask whether generative models can help explain decisions made by generative-based classifiers."
+    },
+    {
+      "title": "Paper Title One",
+      "year": "2026",
+      "subtitle": "Journal / Conference",
+      "type": "Publication",
+      "url": "publications/index.html",
+      "summary": "One-sentence summary of the paper."
+    }
+  ]
+}

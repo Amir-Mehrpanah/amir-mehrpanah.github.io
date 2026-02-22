@@ -1,1 +1,110 @@
-Hello World
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amir's Homepage</title>
+    <meta name="description" content="Research announcements, publications, and academic updates." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+
+<body>  
+    <header class="site-header" data-site-header data-base="" data-active="home"></header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div>
+                    <div class="meta">PhD student at KTH Royal Institute of Technology</div>
+                    <h1>Spectral Analysis, Explainability, and Computer Vision.</h1>
+                    <p>
+                        I am a PhD student interested in theoretical foundations of explainability of deep networks.
+                        I have been working on spectral analysis for understanding and explaining deep models trained on
+                        vision tasks.
+
+                        This site collects announcements, publications, and
+                        research notes.
+                    </p>
+                    <div class="meta-row">
+                        <span>Stockholm, Sweden</span>
+                        <a href="mailto:amirmehrpanah@gmail.com">amirmehrpanah@gmail.com</a>
+                        <a href="mailto:amirme@kth.se">amirme@kth.se</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="section-title">
+                        <span>Highlights</span>
+                    </div>
+                    <ul class="list" data-highlights>
+                        <li>
+                            <div class="post-meta">Update assets/data/highlights.json to populate.</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">
+                    <span>Resume Snapshot</span>
+                    <a href="cv.html">Full CV</a>
+                </div>
+                <div class="grid-2">
+                    <article class="card">
+                        <h2 class="post-title">Education</h2>
+                        <ul class="list" data-education>
+                            <li>
+                                <div class="post-meta">Update assets/data/education.json to populate.</div>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h2 class="post-title">Appointments</h2>
+                        <ul class="list" data-appointments>
+                            <li>
+                                <div class="post-meta">Update assets/data/appointments.json to populate.</div>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">
+                    <span>Selected Publications</span>
+                    <a href="publications/index.html">All publications</a>
+                </div>
+                <div class="publication-list" data-publications="index" data-base="">
+                    <div class="post-meta">Update assets/data/publications.json to populate.</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">
+                    <span>Announcements</span>
+                    <a href="blog/index.html">View blog</a>
+                </div>
+                <div class="post-list" data-announcements>
+                    <div class="post-meta">Update assets/data/announcements.json to populate.</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer data-site-footer></footer>
+
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/highlights.js"></script>
+    <script src="assets/js/education.js"></script>
+    <script src="assets/js/appointments.js"></script>
+    <script src="assets/js/publications.js"></script>
+    <script src="assets/js/announcements.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
