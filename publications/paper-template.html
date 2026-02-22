@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>[Paper Title] | Amir Mehrpanah</title>
-    <meta name="description" content="[Short summary for previews.]" />
+    <title>Publication | Amir Mehrpanah</title>
+    <meta name="description" content="Publication details." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,25 +16,28 @@
   <body>
     <header class="site-header" data-site-header data-base="../../" data-active="publications"></header>
 
-    <main>
+    <main data-publication-detail data-publications-path="publications" data-base="../../">
       <div class="container">
         <section class="section">
           <div class="section-title">
             <span>Publication</span>
-            <span class="tag">[Venue, Year]</span>
+            <span class="tag" data-publication-tag></span>
           </div>
           <article class="card post-content">
-            <h1 class="post-title">[Paper Title]</h1>
+            <h1 class="post-title" data-publication-title></h1>
+            <p class="publication-authors" data-publication-authors></p>
             <img
               class="publication-hero"
-              src="../../assets/images/publication-hero-placeholder.svg"
-              alt="Publication hero placeholder"
+              src=""
+              alt=""
+              data-publication-hero
             />
-            <p>[One-sentence summary of the paper.]</p>
-            <p>[Longer abstract or detailed description of the work.]</p>
+            
+            <p data-publication-abstract></p>
             <p>
-              <a class="button" href="[PDF link]" target="_blank" rel="noopener noreferrer">PDF</a>
+              <a class="button" href="" target="_blank" rel="noopener noreferrer" data-publication-pdf>PDF</a>
             </p>
+            <p class="post-meta" data-publication-error style="display: none;"></p>
           </article>
         </section>
       </div>
@@ -43,6 +46,7 @@
     <footer data-site-footer></footer>
 
     <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/publication-detail.js"></script>
     <script src="../../assets/js/theme.js"></script>
   </body>
 </html>

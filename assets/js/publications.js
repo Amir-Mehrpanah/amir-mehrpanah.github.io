@@ -5,10 +5,12 @@
   }
 
   const scope = container.getAttribute("data-publications") || "index";
-  const source = container.getAttribute("data-source") || "assets/data/publications.json";
+  const limitIndex = parseInt(container.getAttribute("data-index-limit"), "infinite");
+  const configPath = container.getAttribute("data-config") || "publications/config.json";
+  const publicationsPath = container.getAttribute("data-publications-path") || "publications";
   const base = container.getAttribute("data-base") || "";
 
-  const resolveUrl = (value) => {
+  const resolveUrl = (value, folderPath = "") => {
     if (!value) {
       return "";
     }
@@ -20,6 +22,10 @@
       value.startsWith("#")
     ) {
       return value;
+    }
+    // If it's a relative path within a publication folder
+    if (folderPath && !value.startsWith(publicationsPath)) {
+      return `${base}${publicationsPath}/${folderPath}/${value}`;
     }
     return `${base}${value}`;
   };
@@ -33,6 +39,32 @@
       el.className = className;
     }
     el.textContent = text;
+    parent.appendChild(el);
+    return el;
+  };
+
+  const renderInlineStrong = (text) => {
+    if (!text) {
+      return "";
+    }
+    const escaped = text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+    return escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  };
+
+  const addInlineMarkup = (parent, tag, className, text) => {
+    if (!text) {
+      return null;
+    }
+    const el = document.createElement(tag);
+    if (className) {
+      el.className = className;
+    }
+    el.innerHTML = renderInlineStrong(text);
     parent.appendChild(el);
     return el;
   };
@@ -53,7 +85,7 @@
     return title;
   };
 
-  const buildMedia = (item) => {
+  const buildMedia = (item, folderPath) => {
     if (!item.cardImage) {
       return null;
     }
@@ -61,7 +93,7 @@
     media.className = "publication-media";
     const img = document.createElement("img");
     img.className = "publication-image";
-    img.src = resolveUrl(item.cardImage);
+    img.src = resolveUrl(item.cardImage, folderPath);
     img.alt = item.cardImageAlt || item.title || "Publication image";
     img.loading = "lazy";
     media.appendChild(img);
@@ -81,14 +113,22 @@
     return link;
   };
 
-  const buildCard = (item, summaryKey) => {
+  const buildCard = (item, summaryKey, folderPath) => {
     const card = document.createElement("article");
     card.className = "publication-card";
 
     const body = document.createElement("div");
     body.className = "publication-body";
     body.appendChild(buildTitle(item));
-    addText(body, "div", "post-meta", item.meta);
+    const metaParts = [];
+    if (item.meta) {
+      metaParts.push(item.meta);
+    }
+    if (item.year) {
+      metaParts.push(item.year);
+    }
+    addText(body, "div", "post-meta", metaParts.join(" | "));
+    addInlineMarkup(body, "div", "publication-authors", item.authors);
     addText(body, "p", "post-content", item[summaryKey]);
     const pdfLink = buildPdfLink(item);
     if (pdfLink) {
@@ -99,7 +139,7 @@
     }
     card.appendChild(body);
 
-    const media = buildMedia(item);
+    const media = buildMedia(item, folderPath);
     if (media) {
       card.appendChild(media);
     }
@@ -107,21 +147,49 @@
     return card;
   };
 
-  fetch(source)
+  // Load config file to get the list of publication folders
+  fetch(resolveUrl(configPath))
     .then((response) => (response.ok ? response.json() : null))
+    .then((config) => {
+      if (!config || !Array.isArray(config.folders)) {
+        return;
+      }
+
+      // Load info.json from each folder
+      const loadPromises = config.folders.map((folder) => {
+        const infoUrl = `${base}${publicationsPath}/${encodeURIComponent(folder)}/info.json`;
+        return fetch(infoUrl)
+          .then((response) => (response.ok ? response.json() : null))
+          .then((info) => {
+            if (!info) return null;
+            // Create publication item with folder name as title and data from info.json
+            const defaultUrl = `${publicationsPath}/paper-template.html?paper=${encodeURIComponent(folder)}`;
+            return {
+              title: folder,
+              folderPath: folder,
+              ...info,
+              url: info.url ? info.url : defaultUrl
+            };
+          })
+          .catch(() => null);
+      });
+
+      return Promise.all(loadPromises).then((items) => ({
+        items: items.filter((item) => item !== null)
+      }));
+    })
     .then((data) => {
       if (!data || !Array.isArray(data.items)) {
         return;
       }
 
       const summaryKey = scope === "all" ? "abstract" : "shortSummary";
-      const rawLimit = Number.isFinite(data.indexLimit) ? data.indexLimit : data.items.length;
-      const limit = scope === "all" ? data.items.length : Math.max(rawLimit, 0);
+      const limit = Number.isFinite(limitIndex) ? limitIndex : data.items.length;
       const items = data.items.filter(isPublic).slice(0, limit);
 
       container.innerHTML = "";
       items.forEach((item) => {
-        container.appendChild(buildCard(item, summaryKey));
+        container.appendChild(buildCard(item, summaryKey, item.folderPath));
       });
     })
     .catch(() => {

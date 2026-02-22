@@ -1,0 +1,10 @@
+{
+    "meta": "European Conference on Computer Vision (ECCV)",
+    "year": "2024",
+    "authors": "**Amir Mehrpanah**, Erik Englesson, Hossein Azizpour",
+    "shortSummary": "The paper introduces a probabilistic—spectral framework for analyzing deep network explanations, exposes gradient-induced spectral bias, and proposes principled remedies validated empirically.",
+    "abstract": "Understanding the behavior of deep networks is crucial to increase our confidence in their results. Despite an extensive body of work for explaining their predictions, researchers have faced reliability issues, which can be attributed to insufficient formalism. In our research, we adopt novel probabilistic and spectral perspectives to formally analyze explanation methods. Our study reveals a pervasive spectral bias stemming from the use of gradient, and sheds light on some common design choices that have been discovered experimentally, in particular, the use of squared gradient and input perturbation. We further characterize how the choice of perturbation hyperparameters in explanation methods, such as SmoothGrad, can lead to inconsistent explanations and introduce two remedies based on our proposed formalism: (i) a mechanism to determine a standard perturbation scale, and (ii) an aggregation method which we call SpectralLens. Finally, we substantiate our theoretical results through quantitative evaluations.",
+    "cardImage": "card.svg",
+    "cardImageAlt": "Publication cover placeholder",
+    "pdfUrl": "https://www.arxiv.org/abs/2508.10595"
+}

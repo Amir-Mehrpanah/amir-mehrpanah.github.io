@@ -8,7 +8,8 @@
   --line: #d3cec5;
   --card: #faf7f2;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --radius: 18px;
+  --radius: 0px;
+  --botton-radius: 999px;
   --grid-gap: 28px;
   --max-width: 1080px;
 }
@@ -45,10 +46,10 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-image: linear-gradient(var(--line) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--line) 1.5px, transparent 1.5px);
   background-size: 120px 120px;
-  opacity: 0.15;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -84,8 +85,8 @@ a:hover {
 
 .header-grid {
   display: grid;
-  grid-template-columns: 1.4fr 2fr auto;
-  gap: 20px;
+  grid-template-columns: auto 1fr auto;
+  gap: 0px;
   align-items: center;
 }
 
@@ -97,11 +98,12 @@ a:hover {
 
 .nav-links {
   display: flex;
-  gap: 18px;
+  gap: 100px;
   flex-wrap: wrap;
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  justify-self: center;
 }
 
 .theme-toggle {
@@ -210,7 +212,7 @@ main {
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--botton-radius);
   border: 1px solid var(--line);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -230,7 +232,7 @@ main {
 
 .post-card {
   padding: 22px;
-  border-radius: 14px;
+  border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -273,7 +275,7 @@ main {
 .post-image {
   width: 100%;
   display: block;
-  border-radius: 12px;
+  border-radius: var(--radius);
   object-fit: cover;
   aspect-ratio: 4 / 3;
 }
@@ -281,7 +283,7 @@ main {
 .post-hero {
   width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: var(--radius);
   object-fit: cover;
   aspect-ratio: 16 / 9;
   margin-bottom: 18px;
@@ -292,7 +294,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 10px 18px;
-  border-radius: 999px;
+  border-radius: var(--botton-radius);
   border: 1px solid var(--line);
   background: transparent;
   text-transform: uppercase;
@@ -316,7 +318,7 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(0, 160px);
   gap: 24px;
   padding: 24px;
-  border-radius: 14px;
+  border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--card);
   box-shadow: var(--shadow);
@@ -325,7 +327,7 @@ main {
 .publication-image {
   width: 100%;
   display: block;
-  border-radius: 12px;
+  border-radius: var(--radius);
   object-fit: cover;
   aspect-ratio: 4 / 5;
 }
@@ -333,7 +335,7 @@ main {
 .publication-hero {
   width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: var(--radius);
   object-fit: cover;
   aspect-ratio: 16 / 9;
   margin-bottom: 18px;
@@ -341,6 +343,13 @@ main {
 
 .publication-actions {
   margin-top: 16px;
+}
+
+.publication-authors {
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  margin: 6px 0 12px;
 }
 
 .highlight-link {
@@ -351,7 +360,7 @@ main {
 .highlight-link:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 footer {
