@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog | Amir Mehrpanah</title>
-    <meta name="description" content="Research updates, announcements, and notes." />
+    <title>Blog Post | Amir Mehrpanah</title>
+    <meta name="description" content="Blog post details." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,17 +16,26 @@
   <body>
     <header class="site-header" data-site-header data-base="../" data-active="blog"></header>
 
-    <main>
+    <main data-collection-detail data-collection-type="post" data-collection-path="blog"
+      data-param="post" data-base="../">
       <div class="container">
         <section class="section">
           <div class="section-title">
-            <span>Blog</span>
-            <span class="tag">Announcements & Notes</span>
+            <span data-post-category>Blog</span>
+            <span class="tag" data-post-date></span>
           </div>
-          <div class="post-list" data-collection="blog" data-card-variant="post" data-summary-key="shortSummary"
-            data-config="blog/config.json" data-collection-path="blog" data-base="../">
-            <div class="post-meta">Update blog/config.json to populate.</div>
-          </div>
+          <article class="card post-content">
+            <h1 class="post-title" data-post-title>Blog Post</h1>
+            <img
+              class="post-hero"
+              src="../assets/images/post-hero-placeholder.svg"
+              alt=""
+              data-post-hero
+            />
+            <p data-post-lead></p>
+            <p data-post-body></p>
+            <p class="post-meta" data-post-error style="display: none;"></p>
+          </article>
         </section>
       </div>
     </main>
@@ -34,7 +43,7 @@
     <footer data-site-footer></footer>
 
     <script src="../assets/js/layout.js"></script>
-    <script src="../assets/js/collection-list.js"></script>
+    <script src="../assets/js/collection-detail.js"></script>
     <script src="../assets/js/theme.js"></script>
   </body>
 </html>

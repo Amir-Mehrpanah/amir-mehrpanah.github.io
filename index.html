@@ -79,8 +79,9 @@
                     <span>Selected Publications</span>
                     <a href="publications/index.html">All publications</a>
                 </div>
-                <div class="publication-list" data-index-limit="2" data-publications="index"
-                    data-config="publications/config.json" data-publications-path="publications" data-base="">
+                <div class="publication-list" data-collection="publications" data-card-variant="publication"
+                    data-summary-key="shortSummary" data-index-limit="3" data-config="publications/config.json"
+                    data-collection-path="publications" data-base="">
                     <div class="post-meta">Update publications/config.json to populate.</div>
                 </div>
             </section>
@@ -90,8 +91,9 @@
                     <span>Announcements</span>
                     <a href="blog/index.html">View blog</a>
                 </div>
-                <div class="post-list" data-announcements>
-                    <div class="post-meta">Update assets/data/announcements.json to populate.</div>
+                <div class="post-list" data-collection="blog" data-card-variant="post" data-summary-key="shortSummary"
+                    data-config="blog/config.json" data-collection-path="blog" data-base="">
+                    <div class="post-meta">Update blog/config.json to populate.</div>
                 </div>
             </section>
         </div>
@@ -103,8 +105,7 @@
     <script src="assets/js/highlights.js"></script>
     <script src="assets/js/education.js"></script>
     <script src="assets/js/appointments.js"></script>
-    <script src="assets/js/publications.js"></script>
-    <script src="assets/js/announcements.js"></script>
+    <script src="assets/js/collection-list.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
 
