@@ -1,0 +1,10 @@
+{
+    "meta": "Robotics and Autonomous Systems",
+    "year": "2023",
+    "authors": "Fatemeh B. Karimi, **Amir Mehrpanah**, Reza Rawassizadeh",
+    "shortSummary": "We introduce a model-agnostic curriculum learning framework for depth estimation that matches state-of-the-art accuracy while reducing inference time by 71%, enabling fast and energy-efficient deployment on resource-constrained autonomous devices.",
+    "abstract": "Advances in neural networks enable tackling complex computer vision tasks such as depth estimation of outdoor scenes at unprecedented accuracy. Promising research has been done on depth estimation. However, current efforts are computationally resource-intensive and do not consider the resource constraints of autonomous devices, such as robots and drones. In this work, we present a fast and battery-efficient approach for depth estimation. Our approach devises model-agnostic curriculum-based learning for depth estimation. Our experiments show that the accuracy of our model performs on par with the state-of-the-art models, while its response time outperforms other models by 71%.",
+    "cardImage": "card.svg",
+    "cardImageAlt": "Publication cover placeholder",
+    "pdfUrl": "https://arxiv.org/abs/2211.08608"
+}

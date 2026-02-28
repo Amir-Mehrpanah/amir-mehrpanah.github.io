@@ -1,0 +1,10 @@
+{
+    "meta": "Transactions on Machine Learning Research",
+    "year": "2022",
+    "authors": "Erik Englesson, **Amir Mehrpanah**, Hossein Azizpour",
+    "shortSummary": "We extend a probabilistic heteroscedastic label noise model from regression to classification, utilizing loss attenuation to improve robustness against noisy labels.",
+    "abstract": "A natural way of estimating heteroscedastic label noise in regression is to model the observed (potentially noisy) target as a sample from a normal distribution, whose parameters can be learned by minimizing the negative log-likelihood. This formulation has desirable loss attenuation properties, as it reduces the contribution of high-error examples. Intuitively, this behavior can improve robustness against label noise by reducing overfitting. We propose an extension of this simple and probabilistic approach to classification that has the same desirable loss attenuation properties. Furthermore, we discuss and address some practical challenges of this extension. We evaluate the effectiveness of the method by measuring its robustness against label noise in classification. We perform enlightening experiments exploring the inner workings of the method, including sensitivity to hyperparameters, ablation studies, and other insightful analyses.",
+    "cardImage": "card.svg",
+    "cardImageAlt": "Publication cover placeholder",
+    "pdfUrl": "https://arxiv.org/abs/2304.02849"
+}

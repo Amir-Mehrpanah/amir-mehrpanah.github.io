@@ -133,7 +133,8 @@
         const abstractEl = getFirst(["[data-publication-abstract]"]);
         if (abstractEl) {
           if (info.abstract) {
-            abstractEl.textContent = info.abstract;
+            const processedAbstract = renderInlineStrong(info.abstract).replace(/\n/g, "<br>");
+            abstractEl.innerHTML = processedAbstract;
           } else {
             abstractEl.style.display = "none";
           }
