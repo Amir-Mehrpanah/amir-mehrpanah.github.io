@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "title": "SLURM Compute Cluster Adminstration",
+            "meta": "Maintenance duities supervised by <a href=\"link\">Dr. Matteo Gamba</a> (2023-2027)<br><a href=\"link\">Renovation of The Cluster Room</a>"
+        },
+        {
+            "title": "Gas Pipeline Maintenance Via Data Mining",
+            "meta": "A project aimed at predictive maintenance for National Iran's Gas Company supervisied by <a href=\"link\">Dr. Alireza Fereidunian</a> (2021-2022)"
+        },
+        {
+            "title": "Research Internsip on Approximate Similarty Search",
+            "meta": "Due to Covid pandemic (2020-2021), I worked remotely at <a href=\"link\">Shomara</a> on approximate nearest neighbor search algorithms, e.g. (FAISS). I did a literature study and classification of methods, and compared different methods, in practice. This was presented as a technical report, with quick-start guides for future solutions at Shomara."
+        },
+        {
+            "title": "Open Source Project: for Training Object Detection Models on Persian License Plates",
+            "meta": "A long-term open-source project (2019-2020) aimed at making training object detection or segmentation models easier for Persian fonts by generating synthetic images of Persian license plate with data augmentation."
+        },
+        {
+            "title": "C# Unity Game Developer",
+            "meta": "At SodaFanavar game company in Mashhad managed by <a href=\"link\">Prof. Rasoul Ramezanian</a> (2018-2019)<br>Key responsibilities included source code optimization and development."
+        }
+    ]
+}

@@ -36,6 +36,7 @@ const folders = entries
   .map((entry) => entry.name);
 
 const config = {
+  comment: "regenerate by running node scripts/generate-publication-config.js",
   folders
 };
 

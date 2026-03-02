@@ -25,10 +25,15 @@
       }
 
       list.innerHTML = "";
-      data.items.forEach((item) => {
+      const indexLimit = list.getAttribute("data-index-limit");
+      const items = indexLimit ? data.items.slice(0, parseInt(indexLimit)) : data.items;
+      items.forEach((item) => {
         const li = document.createElement("li");
         addText(li, "div", "post-title", item.title);
-        addText(li, "div", "post-meta", item.meta);
+        const metaEl = document.createElement("div");
+        metaEl.className = "post-meta";
+        metaEl.innerHTML = item.meta;
+        li.appendChild(metaEl);
         list.appendChild(li);
       });
     })

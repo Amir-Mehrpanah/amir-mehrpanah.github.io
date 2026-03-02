@@ -1,10 +1,10 @@
 (() => {
-  const list = document.querySelector("[data-appointments]");
+  const list = document.querySelector("[data-awards]");
   if (!list) {
     return;
   }
 
-  const addText = (parent, tag, className, text, useHTML = false) => {
+  const addText = (parent, tag, className, text) => {
     if (!text) {
       return null;
     }
@@ -12,16 +12,12 @@
     if (className) {
       el.className = className;
     }
-    if (useHTML) {
-      el.innerHTML = text;
-    } else {
-      el.textContent = text;
-    }
+    el.textContent = text;
     parent.appendChild(el);
     return el;
   };
 
-  fetch("assets/data/appointments.json")
+  fetch("assets/data/awards.json")
     .then((response) => (response.ok ? response.json() : null))
     .then((data) => {
       if (!data || !Array.isArray(data.items)) {
@@ -29,12 +25,13 @@
       }
 
       list.innerHTML = "";
-      const indexLimit = list.getAttribute("data-index-limit");
-      const items = indexLimit ? data.items.slice(0, parseInt(indexLimit)) : data.items;
-      items.forEach((item) => {
+      data.items.forEach((item) => {
         const li = document.createElement("li");
         addText(li, "div", "post-title", item.title);
-        addText(li, "div", "post-meta", item.meta, true);
+        const metaEl = document.createElement("div");
+        metaEl.className = "post-meta";
+        metaEl.innerHTML = item.meta;
+        li.appendChild(metaEl);
         list.appendChild(li);
       });
     })

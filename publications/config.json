@@ -1,4 +1,5 @@
 {
+    "comment": "regenerate by running node scripts/generate-publication-config.js",
     "folders": [
         "On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations",
         "Toward a Principled Theory of XAI via Spectral Analysis",

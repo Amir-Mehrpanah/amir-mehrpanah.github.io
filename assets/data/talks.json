@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "title": "Talk Title",
+      "meta": "Conference Name, 2025<br>One-line summary of the talk."
+    },
+    {
+      "title": "Seminar Title",
+      "meta": "University, 2024<br>One-line summary of the talk."
+    }
+  ]
+}

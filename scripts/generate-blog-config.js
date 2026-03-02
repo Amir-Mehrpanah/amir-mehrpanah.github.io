@@ -56,6 +56,7 @@ const folders = entries
   .map((entry) => entry.name);
 
 const config = {
+  comment: "regenerate by running node scripts/generate-blog-config.js",
   folders
 };
 

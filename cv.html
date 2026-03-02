@@ -26,39 +26,17 @@
           <div class="grid-2">
             <article class="card">
               <h2 class="post-title">Education</h2>
-              <ul class="list">
+              <ul class="list" data-education>
                 <li>
-                  <div class="post-title">PhD in [Field]</div>
-                  <div class="post-meta">KTH Royal Institute of Technology, 2024 - Present</div>
-                  <p class="highlight">
-                    Thesis focus, advisors, and main research themes.
-                  </p>
-                </li>
-                <li>
-                  <div class="post-title">MSc in [Field]</div>
-                  <div class="post-meta">University Name, 2022 - 2024</div>
-                  <p class="highlight">
-                    Major projects, specialization, or thesis title.
-                  </p>
+                  <div class="post-meta">Update assets/data/education.json to populate.</div>
                 </li>
               </ul>
             </article>
             <article class="card">
-              <h2 class="post-title">Appointments</h2>
-              <ul class="list">
+              <h2 class="post-title">Academic Experience</h2>
+              <ul class="list" data-appointments>
                 <li>
-                  <div class="post-title">Research Assistant</div>
-                  <div class="post-meta">Lab Name, 2023 - Present</div>
-                  <p class="highlight">
-                    Scope, focus area, and collaborative work.
-                  </p>
-                </li>
-                <li>
-                  <div class="post-title">Teaching Assistant</div>
-                  <div class="post-meta">Course Name, 2022 - 2023</div>
-                  <p class="highlight">
-                    Courses taught and contributions.
-                  </p>
+                  <div class="post-meta">Update assets/data/appointments.json to populate.</div>
                 </li>
               </ul>
             </article>
@@ -67,35 +45,35 @@
 
         <section class="section">
           <div class="section-title">
+            <span>Technical Experience</span>
+          </div>
+          <article class="card">
+            <ul class="list" data-skills>
+              <li>
+                <div class="post-meta">Update assets/data/skills.json to populate.</div>
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
             <span>Awards & Grants</span>
           </div>
           <div class="grid-2">
             <article class="card">
-              <ul class="list">
+              <h2 class="post-title">Awards & Grants</h2>
+              <ul class="list" data-awards>
                 <li>
-                  <div class="post-title">Award Name</div>
-                  <div class="post-meta">Granting Body, 2025</div>
-                  <p class="highlight">Short line describing the award.</p>
-                </li>
-                <li>
-                  <div class="post-title">Scholarship Name</div>
-                  <div class="post-meta">Organization, 2024</div>
-                  <p class="highlight">Short line describing the scholarship.</p>
+                  <div class="post-meta">Update assets/data/awards.json to populate.</div>
                 </li>
               </ul>
             </article>
             <article class="card">
               <h2 class="post-title">Selected Talks</h2>
-              <ul class="list">
+              <ul class="list" data-talks>
                 <li>
-                  <div class="post-title">Talk Title</div>
-                  <div class="post-meta">Conference Name, 2025</div>
-                  <p class="highlight">One-line summary of the talk.</p>
-                </li>
-                <li>
-                  <div class="post-title">Seminar Title</div>
-                  <div class="post-meta">University, 2024</div>
-                  <p class="highlight">One-line summary of the talk.</p>
+                  <div class="post-meta">Update assets/data/talks.json to populate.</div>
                 </li>
               </ul>
             </article>
@@ -107,6 +85,11 @@
     <footer data-site-footer></footer>
 
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/education.js"></script>
+    <script src="assets/js/appointments.js"></script>
+    <script src="assets/js/awards.js"></script>
+    <script src="assets/js/talks.js"></script>
+    <script src="assets/js/skills.js"></script>
     <script src="assets/js/theme.js"></script>
   </body>
 </html>
