@@ -4,7 +4,9 @@
     "authors": "Roohallah M. Esferizi, Behnaz H. M. Hoseyni, **Amir Mehrpanah**, Yazdan Golzade, Ali Najafi, Fatemeh Elahian, Amin Z. Shirazi, Guillermo A. Gomez, Shahram Tahmasebian",
     "shortSummary": "DeeP4med is an autoencoder architecture that performs domain translation between healthy and cancerous gene expression data to identify the key features that drive disease progression.",
     "abstract": "This paper introduces DeeP4med, an autoencoder-based deep learning model designed to map patient data between healthy and cancerous states. Conceptually similar to domain translation tasks, the architecture features a 'Classifier' for state identification and a 'Transferor' that reconstructs a tumor's feature matrix from a healthy sample's data (and vice versa). Evaluated across 13 tissue types, the model achieved near-perfect classification accuracy (up to 0.992), significantly outperforming seven classical machine learning baselines (including SVM, Random Forest, and KNN). By accurately generating the target domain (tumor) from the source domain (healthy), the network successfully isolates the specific features driving the disease, enabling highly personalized predictive diagnostics without requiring deep biological domain expertise to operate the model.",
-    "cardImage": "card.svg",
+    "heroImage": "hero.png",
+    "cardImage": "card.png",
+    "heroImageAlt": "Publication hero image placeholder",
     "cardImageAlt": "Publication cover placeholder",
     "pdfUrl": "https://arxiv.org/abs/2304.02849"
 }

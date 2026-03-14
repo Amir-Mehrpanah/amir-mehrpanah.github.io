@@ -1,10 +1,12 @@
 {
-    "meta": "Transactions on Machine Learning Research",
-    "year": "2022",
-    "authors": "Erik Englesson, **Amir Mehrpanah**, Hossein Azizpour",
-    "shortSummary": "We extend a probabilistic heteroscedastic label noise model from regression to classification, utilizing loss attenuation to improve robustness against noisy labels.",
-    "abstract": "A natural way of estimating heteroscedastic label noise in regression is to model the observed (potentially noisy) target as a sample from a normal distribution, whose parameters can be learned by minimizing the negative log-likelihood. This formulation has desirable loss attenuation properties, as it reduces the contribution of high-error examples. Intuitively, this behavior can improve robustness against label noise by reducing overfitting. We propose an extension of this simple and probabilistic approach to classification that has the same desirable loss attenuation properties. Furthermore, we discuss and address some practical challenges of this extension. We evaluate the effectiveness of the method by measuring its robustness against label noise in classification. We perform enlightening experiments exploring the inner workings of the method, including sensitivity to hyperparameters, ablation studies, and other insightful analyses.",
-    "cardImage": "card.svg",
+    "meta": "Robotics and Autonomous Systems",
+    "year": "2023",
+    "authors": "Fatemeh B. Karimi, **Amir Mehrpanah**, Reza Rawassizadeh",
+    "shortSummary": "We introduce a model-agnostic curriculum learning framework for depth estimation that matches state-of-the-art accuracy while reducing inference time by 71%, enabling fast and energy-efficient deployment on resource-constrained autonomous devices.",
+    "abstract": "Advances in neural networks enable tackling complex computer vision tasks such as depth estimation of outdoor scenes at unprecedented accuracy. Promising research has been done on depth estimation. However, current efforts are computationally resource-intensive and do not consider the resource constraints of autonomous devices, such as robots and drones. In this work, we present a fast and battery-efficient approach for depth estimation. Our approach devises model-agnostic curriculum-based learning for depth estimation. Our experiments show that the accuracy of our model performs on par with the state-of-the-art models, while its response time outperforms other models by 71%.",
+    "cardImage": "card.png",
+    "heroImage": "hero.png",
+    "heroImageAlt": "Publication hero image placeholder",
     "cardImageAlt": "Publication cover placeholder",
-    "pdfUrl": "https://arxiv.org/abs/2304.02849"
+    "pdfUrl": "https://arxiv.org/abs/2211.08608"
 }

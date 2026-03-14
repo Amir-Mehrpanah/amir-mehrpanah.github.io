@@ -2,11 +2,15 @@
     "items": [
         {
             "title": "Affiliated WASP PhD Student",
-            "meta": "Wallenberg AI, Autonomous Systems and Software Program, 2023<br>Affiliation with the WASP program, supports PhD students to take courses from the WASP Graduate School, take part in WASP activities and events such as study trips and WASP Winter Conference."
+            "meta": "<a href=\"https://wasp-sweden.org/research/wasp-artificial-intelligence/\">Wallenberg AI, Autonomous Systems and Software Program</a>, Sweden 2023<br>Affiliation with the WASP program, supports PhD students to take courses from the WASP Graduate School, take part in WASP activities and events such as study trips and WASP Winter Conference."
         },
         {
             "title": "WASP Study Trip",
             "meta": "A study trip organized by the WASP Graduate School, 2024<br>Selected to participate in a study trip to Zurich, Switzerland, where I had the opportunity to visit leading research institutions and companies in the field of AI and autonomous systems, including ETH Zurich, Zurich AI Center, Anybotics, and Walt Disney Research."
+        },
+        {
+            "title": "Merit-based Direct Admission to M.Sc. At Ferdowsi University of Mashhad",
+            "meta": "Ferdowsi University of Mashhad, Iran 2019<br>Received direct admission to the M.Sc. program in Applied Mathematics at Ferdowsi University of Mashhad based on academic merit, without the need for an entrance exam."
         }
     ]
 }

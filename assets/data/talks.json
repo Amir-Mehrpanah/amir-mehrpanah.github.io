@@ -1,12 +1,8 @@
 {
   "items": [
     {
-      "title": "Talk Title",
-      "meta": "Conference Name, 2025<br>One-line summary of the talk."
-    },
-    {
-      "title": "Seminar Title",
-      "meta": "University, 2024<br>One-line summary of the talk."
+      "title": "Spectral Analysis as a Basis for a Theory of XAI",
+      "meta": "<a href=\"https://sites.google.com/view/theory-of-xai-workshop\">Inaguration of Eruips Conference 2025 Theory of Explainable Machine Learning Workshop</a><br>ELLIS UnConference, Bella Center, Copenhagen, Denmark<br>I have presented the promise in spectral analysis for XAI which I give examples from our works."
     }
   ]
 }
