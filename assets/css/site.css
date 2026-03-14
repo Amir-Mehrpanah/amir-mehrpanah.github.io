@@ -268,16 +268,24 @@ main {
   line-height: 1.7;
 }
 
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .post-media {
   width: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .post-image {
   width: 100%;
+  height: 100%;
   display: block;
   border-radius: var(--radius);
   object-fit: cover;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
 }
 
 .post-hero {
@@ -330,12 +338,18 @@ main {
   box-shadow: var(--shadow);
 }
 
+.publication-media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
 .publication-image {
   width: 100%;
+  height: 100%;
   display: block;
   border-radius: var(--radius);
   object-fit: cover;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 
 .publication-hero {
