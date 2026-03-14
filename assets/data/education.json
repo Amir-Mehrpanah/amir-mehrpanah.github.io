@@ -2,19 +2,19 @@
   "items": [
     {
       "title": "PhD in Computer Science",
-      "meta": "<a href=\"https://www.kth.se/en/studies/phd/education/phd-studies\">KTH Royal Institute of Technology</a> (2022-2027)<br>Thesis: Explainability and Uncertainty in Deep Learning for Computer Vision.<br>Supervisor: Prof. Hossein Azizpour, Co-supervisor: Prof. Kevin Smith<br>WASP Affiliated PhD student."
+      "meta": "<a href=\"https://www.kth.se/en/studies/phd/education/phd-studies\">KTH Royal Institute of Technology</a> Stockholm, Sweden (2022-2027)<br>Thesis: Explainability and Uncertainty in Deep Learning for Computer Vision.<br>Supervisor: Prof. Hossein Azizpour, Co-supervisor: Prof. Kevin Smith<br>WASP Affiliated PhD student."
     },
     {
       "title": "MSc in Data Science",
-      "meta": "<a href=\"https://en.sbu.ac.ir/\">Shahid Beheshti University</a> (2019-2021)<br>Thesis: On oversmoothing in Graph Neural Networks.<br>Cumulative GPA: 3.90/4.0<br>Ranked 1st among students in the same batch."
+      "meta": "<a href=\"https://en.sbu.ac.ir/\">Shahid Beheshti University</a> Tehran, Iran (2019-2021)<br>Thesis: On oversmoothing in Graph Neural Networks.<br>Cumulative GPA: 3.90/4.0<br>Ranked 1st among students in the same batch."
     },
     {
       "title": "BSc Applied Mathematics",
-      "meta": "<a href=\"https://en.um.ac.ir/\">Ferdowsi University of Mashhad</a> (2015-2019)<br>Cumulative GPA 3.86/4.0<br>Ranked 2nd among students in the same batch.<br>Ranked 7th in the national university entrance exam (Konkur) of Masters studies.<br>Direct admission to Master's program at the Ferdowsi University of Mashhad based on merit."
+      "meta": "<a href=\"https://en.um.ac.ir/\">Ferdowsi University of Mashhad</a>, Iran (2015-2019)<br>Cumulative GPA 3.86/4.0<br>Ranked 2nd among students in the same batch.<br>Ranked 7th in the national university entrance exam (Konkur) of Masters studies.<br>Direct admission to Master's program at the Ferdowsi University of Mashhad based on merit."
     },
     {
       "title": "Image Processing and Optimization with MATLAB Summer School",
-      "meta": "<a href=\"https://khrazavi.irantvto.ir\">Professional Technical Education of Eram</a> (2015)<br>Certificate in Image Processing with MATLAB.<br>Skills acquired: Image processing techniques, edge detection, and optimization algorithms using MATLAB."
+      "meta": "<a href=\"https://khrazavi.irantvto.ir\">Professional Technical Education of Eram</a> Mashhad, Iran (2015)<br>Certificate in Image Processing with MATLAB.<br>Skills acquired: Image processing techniques, edge detection, and optimization algorithms using MATLAB."
     }
   ]
 }
