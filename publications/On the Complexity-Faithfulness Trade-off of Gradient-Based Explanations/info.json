@@ -4,7 +4,9 @@
     "authors": "**Amir Mehrpanah**, Matteo Gamba, Kevin Smith, Hossein Azizpour",
     "shortSummary": "The paper proposes a spectral framework to analyze the smoothness–faithfulness trade-off in ReLU network explanations, formalizes the resulting explanation gap, and provides principled regularization with empirical validation.",
     "abstract": "ReLU networks, while prevalent for visual data, have sharp transitions, sometimes relying on individual pixels for predictions, making vanilla gradient-based explanations noisy and difficult to interpret. Existing methods, such as GradCAM, smooth these explanations by producing surrogate models at the cost of faithfulness. We introduce a unifying spectral framework to systematically analyze and quantify smoothness, faithfulness, and their trade-off in explanations. Using this framework, we quantify and regularize the contribution of ReLU networks to high-frequency information, providing a principled approach to identifying this trade-off. Our analysis characterizes how surrogate-based smoothing distorts explanations, leading to an ``explanation gap'' that we formally define and measure for different post-hoc methods. Finally, we validate our theoretical findings across different design choices, datasets, and ablations.",
-    "cardImage": "card.svg",
+    "cardImage": "card.png",
+    "heroImage": "hero.png",
+    "heroImageAlt": "Publication hero image placeholder",
     "cardImageAlt": "Publication cover placeholder",
     "pdfUrl": "https://www.arxiv.org/abs/2508.10490"
 }

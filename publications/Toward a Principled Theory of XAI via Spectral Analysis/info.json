@@ -4,7 +4,9 @@
     "authors": "**Amir Mehrpanah**, Matteo Gamba, Hossein Azizpour",
     "shortSummary": "The position paper argues that spectral analysis provides a principled theoretical foundation for understanding and navigating the ante-hoc versus post-hoc trade-offs in explainable AI.",
     "abstract": "Establishing trust in AI systems requires explanations for their decisions. However, AI models that are practically effective often express highly nonlinear functions of the data, in turn resulting in complex explanations. Humans, by contrast, have a cognitive preference for low-complexity explanations. Consequently, there have been various efforts to simplify explanations of non-linear models. A central dilemma in Explainable AI (XAI) arises at this point: should simplification be pursued ante-hoc (i.e., designing models yielding simple explanations once trained) or post-hoc (i.e., designing explanation methods that work with arbitrarily complex models)? Crucially, both strategies rely heavily on heuristics and implicit assumptions, lacking a rigorous theoretical foundation. This prevents a principled analysis of the fundamental trade-offs inherent to XAI. This position paper advocates for spectral analysis as a promising framework for deeper theoretical analysis of XAI. Using image data as a case study, we examine the challenges of both ante- and post-hoc approaches and outline future research directions. We retrospectively analyze both approaches, uncovering their implicit assumptions via two fundamental questions: the source of explanation complexity and the necessity of model complexity for a task. These questions provide a principled basis for choosing between the two approaches. Regardless of one’s stance, we argue that spectral methods offer a valuable foundation for formal XAI and can inform efforts across other modalities.",
-    "cardImage": "card.svg",
+    "cardImage": "card.png",
+    "heroImage": "hero.png",
+    "heroImageAlt": "Publication hero image placeholder",
     "cardImageAlt": "Publication cover placeholder",
     "pdfUrl": "https://excv-workshop.github.io/publication/toward-a-principled-theory-of-xai-via-spectral-analysis/"
 }
