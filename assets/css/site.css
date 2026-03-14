@@ -372,8 +372,7 @@ main {
   width: 100%;
   display: block;
   border-radius: var(--radius);
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
+  height: auto;
   margin-bottom: 18px;
 }
 
@@ -432,12 +431,14 @@ main {
   aspect-ratio: 1 / 1;
 }
 
+/* Backward-compatible override for older publication pages using this class. */
 .publication-hero {
   width: 100%;
   display: block;
   border-radius: var(--radius);
-  object-fit: contain;
-  aspect-ratio: 16 / 9;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: initial;
   margin-bottom: 18px;
 }
 
