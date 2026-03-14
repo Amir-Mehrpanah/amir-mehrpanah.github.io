@@ -1,7 +1,6 @@
 {
+    "comment": "regenerate by running node scripts/generate-blog-config.js",
     "folders": [
-        "2026-02-22-generative-based-classification",
-        "2026-02-22-research-notes",
-        "2026-02-22-welcome"
+        "2026-02-22-generative-based-classification"
     ]
 }
