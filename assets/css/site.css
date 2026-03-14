@@ -1,6 +1,9 @@
 :root {
   --bg: #f5f3ee;
   --bg-alt: #eee9df;
+  --bg-accent-1: rgba(201, 118, 76, 0.24);
+  --bg-accent-2: rgba(57, 127, 134, 0.22);
+  --bg-accent-3: rgba(221, 171, 91, 0.18);
   --text: #1b1b1b;
   --muted: #5c5c5c;
   --accent: #1f4e5f;
@@ -17,6 +20,9 @@
 [data-theme="dark"] {
   --bg: #0f1214;
   --bg-alt: #14181b;
+  --bg-accent-1: rgba(118, 201, 214, 0.34);
+  --bg-accent-2: rgba(92, 147, 224, 0.3);
+  --bg-accent-3: rgba(209, 153, 94, 0.28);
   --text: #f1f1f1;
   --muted: #b5b9bd;
   --accent: #89c2c7;
@@ -38,11 +44,29 @@ body {
   margin: 0;
   font-family: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top left, var(--bg-alt), var(--bg)) fixed;
+  background:
+    radial-gradient(120% 120% at 0% 0%, var(--bg-alt), transparent 60%),
+    radial-gradient(140% 120% at 100% 100%, color-mix(in srgb, var(--bg-alt) 65%, var(--bg) 35%), transparent 62%),
+    var(--bg);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(44vw 44vw at 12% 18%, var(--bg-accent-1), transparent 68%),
+    radial-gradient(40vw 40vw at 88% 12%, var(--bg-accent-2), transparent 70%),
+    radial-gradient(38vw 38vw at 50% 90%, var(--bg-accent-3), transparent 72%);
+  filter: blur(8px);
+  opacity: 0.85;
+  pointer-events: none;
+  animation: auroraDrift 7s ease-in-out infinite alternate;
+}
+
+body::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -51,6 +75,52 @@ body::before {
   background-size: 120px 120px;
   opacity: 0.3;
   pointer-events: none;
+  animation: gridFloat 7s linear infinite;
+}
+
+[data-theme="dark"] body::before {
+  opacity: 1;
+  filter: blur(6px) saturate(1.2);
+  mix-blend-mode: screen;
+}
+
+[data-theme="dark"] body::after {
+  opacity: 0.2;
+}
+
+.site-header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes auroraDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.8%, -1.2%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(-2%, 1.6%, 0) scale(1.02);
+  }
+}
+
+@keyframes gridFloat {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 120px, 120px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
 }
 
 a {
