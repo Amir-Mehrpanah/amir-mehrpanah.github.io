@@ -46,10 +46,10 @@ Every post folder must contain an `info.json`. All fields are optional unless no
 | `title` | string | **Required.** Post title shown on the card and detail page. |
 | `date` | string | ISO date (`"2026-02-22"`). Used for sorting and display. |
 | `meta` | string | Combined label shown on the card (e.g. `"Feb 22, 2026 \| Research Notes"`). When present it replaces the separate date/category rendering on the detail page. |
-| `shortSummary` | string | Card excerpt and lead paragraph on the detail page. |
-| `summary` | string | Fallback if `shortSummary` is absent. |
+| `shortSummary` | string | Card excerpt used in blog list/card views. |
+| `summary` | string | Lead paragraph on the detail page. |
 | `body` | string | Plain-text body shown on the detail page. |
-| `bodyHtml` | string | HTML body for the detail page. Supports `**bold**` inline markup. Takes precedence over `body`. |
+| `bodyHtml` | string | HTML body for the detail page. Preserves author HTML (for example `<br>`) and also supports `**bold**` inline markup. Takes precedence over `body`. |
 | `cardImage` | string | Path to the card thumbnail image (relative to the post folder, or a full URL). |
 | `cardImageAlt` | string | Alt text for the card thumbnail. |
 | `heroImage` | string | Hero image on the detail page. Falls back to `cardImage` if absent. |
@@ -100,7 +100,7 @@ It fetches `blog/2026-02-22-my-post/info.json` and fills the following slots:
 | `data-post-title` | `title` |
 | `data-post-date` | `date` (hidden when `meta` is set) |
 | `data-post-category` | `meta`, then `type`/`category` |
-| `data-post-lead` | `shortSummary` or `summary` |
+| `data-post-lead` | `summary` |
 | `data-post-body` | `bodyHtml` (HTML) › `body` (text) › `abstract` |
 | `data-post-hero` | `heroImage` › `cardImage` |
 
@@ -149,7 +149,7 @@ Any other `status` value (e.g. `"draft"`, `"hidden"`) will exclude the post from
 
 ## 7. Inline Markup
 
-`**word**` inside `bodyHtml`, `meta`, and `authors` fields is rendered as `<strong>word</strong>`. All other HTML characters are escaped before this substitution, so the feature is safe to use without sanitization concerns.
+`**word**` inside `bodyHtml`, `meta`, and `authors` fields is rendered as `<strong>word</strong>`. For `bodyHtml`, raw HTML is preserved (for example `<br>`), so treat it as trusted authored content.
 
 ---
 

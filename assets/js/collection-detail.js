@@ -49,6 +49,14 @@
     return escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   };
 
+  const renderBodyHtml = (text) => {
+    if (!text) {
+      return "";
+    }
+    // Preserve author-provided HTML (for example <br>) while supporting **bold** markup.
+    return String(text).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  };
+
   const getFirst = (selectors) => {
     for (const selector of selectors) {
       const el = root.querySelector(selector);
@@ -176,7 +184,7 @@
 
         const leadEl = getFirst(["[data-post-lead]"]);
         if (leadEl) {
-          const lead = info.shortSummary || info.summary || "";
+          const lead = info.summary || "";
           if (lead) {
             leadEl.textContent = lead;
           } else {
@@ -187,7 +195,7 @@
         const bodyEl = getFirst(["[data-post-body]"]);
         if (bodyEl) {
           if (info.bodyHtml) {
-            bodyEl.innerHTML = renderInlineStrong(info.bodyHtml);
+            bodyEl.innerHTML = renderBodyHtml(info.bodyHtml);
           } else if (info.body) {
             bodyEl.textContent = info.body;
           } else if (info.abstract) {
