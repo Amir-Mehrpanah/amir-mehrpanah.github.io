@@ -152,9 +152,23 @@
         if (pdfEl) {
           if (info.pdfUrl) {
             pdfEl.href = resolveUrl(info.pdfUrl, folder);
-          } else if (pdfEl.parentElement) {
-            pdfEl.parentElement.style.display = "none";
+          } else {
+            pdfEl.style.display = "none";
           }
+        }
+
+        const videoEl = getFirst(["[data-publication-video]"]);
+        if (videoEl) {
+          if (info.videoUrl) {
+            videoEl.href = resolveUrl(info.videoUrl, folder);
+          } else {
+            videoEl.style.display = "none";
+          }
+        }
+
+        const actionsEl = pdfEl?.parentElement || videoEl?.parentElement;
+        if (actionsEl && !info.pdfUrl && !info.videoUrl) {
+          actionsEl.style.display = "none";
         }
       } else {
         const categoryEl = getFirst(["[data-post-category]"]);

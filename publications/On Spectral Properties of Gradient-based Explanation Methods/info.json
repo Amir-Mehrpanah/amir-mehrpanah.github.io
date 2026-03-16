@@ -8,5 +8,6 @@
     "heroImage": "hero.png",
     "heroImageAlt": "Publication hero image placeholder",
     "cardImageAlt": "Publication cover placeholder",
-    "pdfUrl": "https://www.arxiv.org/abs/2508.10595"
+    "pdfUrl": "https://www.arxiv.org/abs/2508.10595",
+    "videoUrl": "https://www.youtube.com/watch?v=GxRamQz6s6Y"
 }

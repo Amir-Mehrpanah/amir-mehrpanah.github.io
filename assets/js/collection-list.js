@@ -123,11 +123,28 @@
       return null;
     }
     const link = document.createElement("a");
-    link.className = "button";
+    link.className = "button button-icon";
     link.href = linkResolver(item.pdfUrl);
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = "PDF";
+    link.setAttribute("aria-label", "Open PDF");
+    link.setAttribute("title", "Open PDF");
+    link.innerHTML = '<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>';
+    return link;
+  };
+
+  const buildVideoLink = (item, linkResolver) => {
+    if (!item.videoUrl) {
+      return null;
+    }
+    const link = document.createElement("a");
+    link.className = "button button-icon";
+    link.href = linkResolver(item.videoUrl);
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", "Open YouTube video");
+    link.setAttribute("title", "Open YouTube video");
+    link.innerHTML = '<i class="fa-brands fa-youtube" aria-hidden="true"></i>';
     return link;
   };
 
@@ -165,10 +182,16 @@
     addText(body, "p", "post-content", getSummary(item, summaryKey));
 
     const pdfLink = buildPdfLink(item, linkResolver);
-    if (pdfLink) {
+    const videoLink = buildVideoLink(item, linkResolver);
+    if (pdfLink || videoLink) {
       const actions = document.createElement("div");
       actions.className = "publication-actions";
-      actions.appendChild(pdfLink);
+      if (pdfLink) {
+        actions.appendChild(pdfLink);
+      }
+      if (videoLink) {
+        actions.appendChild(videoLink);
+      }
       body.appendChild(actions);
     }
 
