@@ -161,9 +161,76 @@ a:hover {
 }
 
 .brand {
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  justify-self: start;
+}
+
+.brand-socials {
+  display: flex;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social-link,
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--card) 84%, transparent);
+  color: var(--text);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.social-link:hover,
+.theme-toggle:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent-strong);
+  background: color-mix(in srgb, var(--card) 70%, var(--accent) 14%);
+  transform: translateY(-1px);
+}
+
+.social-link:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.social-link i,
+.theme-toggle i {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.social-link .ai {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+}
+
+.social-link svg {
+  width: 35px;
+  height: 35px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-links--footer {
+  margin-top: 12px;
 }
 
 .nav-links {
@@ -177,15 +244,20 @@ a:hover {
 }
 
 .theme-toggle {
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--text);
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
   cursor: pointer;
+  padding: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 main {
@@ -489,6 +561,11 @@ footer {
     gap: 12px;
   }
 
+  .brand,
+  .theme-toggle {
+    justify-self: start;
+  }
+
   .nav-links {
     justify-content: flex-start;
     gap: 12px 18px;
@@ -525,8 +602,7 @@ footer {
   }
 
   .brand {
-    font-size: 0.84rem;
-    letter-spacing: 0.03em;
+    min-height: 44px;
   }
 
   .nav-links {
@@ -536,10 +612,13 @@ footer {
   }
 
   .theme-toggle {
-    justify-self: start;
-    padding: 7px 12px;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
   }
 
   .hero {

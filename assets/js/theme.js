@@ -1,6 +1,7 @@
 (() => {
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
+  const toggleIcon = toggle ? toggle.querySelector(".theme-toggle__icon") : null;
   const storageKey = "theme-preference";
 
   const getSystemTheme = () =>
@@ -14,8 +15,14 @@
       localStorage.setItem(storageKey, theme);
     }
     if (toggle) {
-      toggle.textContent = theme === "dark" ? "Light Theme" : "Dark Theme";
-      toggle.setAttribute("aria-label", `Theme: ${theme}`);
+      const nextTheme = theme === "dark" ? "light" : "dark";
+      const label = `Switch to ${nextTheme} theme`;
+      toggle.setAttribute("aria-label", label);
+      toggle.setAttribute("title", label);
+      toggle.setAttribute("data-next-theme", nextTheme);
+    }
+    if (toggleIcon) {
+      toggleIcon.className = `theme-toggle__icon fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`;
     }
   };
 
