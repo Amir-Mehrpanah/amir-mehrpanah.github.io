@@ -8,6 +8,8 @@
   --muted: #5c5c5c;
   --accent: #1f4e5f;
   --accent-strong: #12323c;
+  --link: color-mix(in srgb, var(--text) 30%, var(--accent) 30%);
+  --link-hover: var(--accent-strong);
   --line: #d3cec5;
   --card: #faf7f295;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -27,6 +29,8 @@
   --muted: #b5b9bd;
   --accent: #89c2c7;
   --accent-strong: #b9e1e6;
+  --link: color-mix(in srgb, var(--text) 30%, var(--accent-strong) 30%);
+  --link-hover: var(--accent-strong);
   --line: hsla(203, 13%, 19%, 0.779);
   --card: #161b1f91;
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
@@ -124,12 +128,13 @@ footer {
 }
 
 a {
-  color: inherit;
+  color: var(--link);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--accent-strong);
+  color: var(--link-hover);
 }
 
 .container {
@@ -359,6 +364,10 @@ main {
   overflow-wrap: anywhere;
 }
 
+.meta-row .meta-icon {
+  margin-right: 6px;
+}
+
 .tag {
   display: inline-flex;
   align-items: center;
@@ -570,17 +579,26 @@ footer {
 
 @media (max-width: 900px) {
   .header-grid {
-    grid-template-columns: 1fr;
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand toggle"
+      "nav nav";
+    align-items: center;
     gap: 12px;
   }
 
-  .brand,
-  .theme-toggle {
+  .brand {
+    grid-area: brand;
     justify-self: start;
   }
 
+  .theme-toggle {
+    grid-area: toggle;
+    justify-self: end;
+  }
+
   .nav-links {
+    grid-area: nav;
     justify-content: flex-start;
     gap: 12px 18px;
   }
@@ -633,6 +651,16 @@ footer {
   .social-link {
     width: 40px;
     height: 40px;
+  }
+
+  .social-link i,
+  .theme-toggle i {
+    font-size: 1.45rem;
+  }
+
+  .social-link svg {
+    width: 31px;
+    height: 31px;
   }
 
   .hero {

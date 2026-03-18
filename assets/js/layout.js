@@ -1,6 +1,11 @@
 (() => {
   const socialProfiles = [
     {
+      href: "mailto:amirmehrpanah@gmail.com",
+      label: "Email",
+      iconMarkup: '<i class="fa-solid fa-envelope" aria-hidden="true"></i>',
+    },
+    {
       href: "https://scholar.google.com/citations?user=dXcXce4AAAAJ&hl=en",
       label: "Google Scholar",
       iconMarkup: '<i class="ai ai-google-scholar" aria-hidden="true"></i>',
@@ -99,19 +104,11 @@
   const buildFooter = () => `
     <div class="container footer-grid">
       <div>
-        <strong>Contact</strong>
-        <div>
-          <a href="mailto:amirmehrpanah@gmail.com">amirmehrpanah@gmail.com</a>
-          ·
-          <a href="mailto:amirme@kth.se">amirme@kth.se</a>
-        </div>
-      </div>
-      <div>
         <strong>Location</strong>
-        <div>Stockholm, Sweden</div>
+        <div><i class="fa-solid fa-location-dot meta-icon" aria-hidden="true"> </i> Stockholm, Sweden</div>
       </div>
       <div>
-        <strong>Profiles</strong>
+        <strong>Contact</strong>
         ${buildSocialLinks("social-links social-links--footer")}
       </div>
     </div>
