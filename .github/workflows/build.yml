@@ -39,12 +39,10 @@ jobs:
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
+      
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
 
-      - name: Commit and push changes
-        if: steps.verify-changes.outputs.has_changes == 'true'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add index.html cv.html blog/index.html publications/index.html sitemap.xml
-          git commit -m "chore: regenerate static pages and sitemap [skip ci]"
-          git push
