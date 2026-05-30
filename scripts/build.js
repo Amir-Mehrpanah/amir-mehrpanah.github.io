@@ -100,13 +100,17 @@ const buildCollectionList = (items, limit = null) => {
   return limited.map(item => buildListItem(item)).join('\n');
 };
 
-const buildPublicationCard = (item) => {
+const buildPublicationCard = (item, urlPrefix = null) => {
   let html = '<article class="publication-card"><div class="publication-body">';
   
   // Title (with optional link)
   html += '<h2 class="post-title">';
   if (item.url) {
-    html += `<a href="${item.url}">${item.folder}</a>`;
+    let url = item.url;
+    if (typeof urlPrefix === 'string') {
+      url = `${urlPrefix}${item.folder}/`;
+    }
+    html += `<a href="${url}">${item.folder}</a>`;
   } else {
     html += item.folder;
   }
@@ -162,8 +166,10 @@ const buildPublicationCard = (item) => {
   return html;
 };
 
-const buildPostCard = (item) => {
-  let html = '<article class="post-card"><div>';
+const buildPostCard = (item, urlPrefix = null) => {
+  // Check if item has media for class
+  const hasMedia = !!item.cardImage;
+  let html = `<article class="post-card${hasMedia ? ' has-media' : ''}"><div>`;
   
   // Meta (date | type)
   let metaText = '';
@@ -183,7 +189,11 @@ const buildPostCard = (item) => {
   // Title (with optional link)
   html += '<h2 class="post-title">';
   if (item.url) {
-    html += `<a href="${item.url}">${item.title}</a>`;
+    let url = item.url;
+    if (typeof urlPrefix === 'string') {
+      url = `${urlPrefix}${item.folder}/`;
+    }
+    html += `<a href="${url}">${item.title}</a>`;
   } else {
     html += item.title;
   }
@@ -208,7 +218,7 @@ const buildPostCard = (item) => {
   return html;
 };
 
-const buildPublicationList = (items, limit = null) => {
+const buildPublicationList = (items, limit = null, urlPrefix = null) => {
   if (!items || !Array.isArray(items)) {
     return '';
   }
@@ -216,10 +226,10 @@ const buildPublicationList = (items, limit = null) => {
   const filtered = items.filter(item => item.public === true || item.status === 'public' || !item.status);
   const limited = limit ? filtered.slice(0, limit) : filtered;
   
-  return limited.map(item => buildPublicationCard(item)).join('\n');
+  return limited.map(item => buildPublicationCard(item, urlPrefix)).join('\n');
 };
 
-const buildPostList = (items, limit = null) => {
+const buildPostList = (items, limit = null, urlPrefix = null) => {
   if (!items || !Array.isArray(items)) {
     return '';
   }
@@ -227,7 +237,7 @@ const buildPostList = (items, limit = null) => {
   const filtered = items.filter(item => item.public === true || item.status === 'public' || !item.status);
   const limited = limit ? filtered.slice(0, limit) : filtered;
   
-  return limited.map(item => buildPostCard(item)).join('\n');
+  return limited.map(item => buildPostCard(item, urlPrefix)).join('\n');
 };
 
 const buildHeader = (base = '', active = 'home') => {
@@ -286,6 +296,21 @@ const buildFooter = () => {
   return html;
 };
 
+const generateItemUrl = (folderPath, folder, item = null) => {
+  // Generate URLs following the original collection-list.js logic
+  if (folderPath === 'publications') {
+    return `publications/${encodeURIComponent(folder)}/`;
+  } else if (folderPath === 'blog') {
+    // For blog posts with useTemplate: false, link to the static page
+    if (item && item.useTemplate === false) {
+      return `blog/${encodeURIComponent(folder)}/index.html`;
+    }
+    // For blog posts without useTemplate: false, link to the template (now pre-rendered as static)
+    return `blog/${encodeURIComponent(folder)}/`;
+  }
+  return '';
+};
+
 const loadCollectionItems = (folderPath, configFile) => {
   const config = loadJSON(configFile);
   if (!config || !Array.isArray(config.folders)) return [];
@@ -297,6 +322,10 @@ const loadCollectionItems = (folderPath, configFile) => {
       const info = loadJSON(infoPath);
       if (info) {
         info.folder = folder;
+        // Generate URL if not explicitly provided
+        if (!info.url) {
+          info.url = generateItemUrl(folderPath, folder, info);
+        }
         items.push(info);
       }
     }
@@ -357,6 +386,121 @@ const loadAllData = () => ({
   skills: loadJSON('assets/data/skills.json'),
 });
 
+// Build individual publication detail page
+const buildPublicationDetailPage = (item, headerHTML, footerHTML) => {
+  let html = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>${item.title || item.folder} | Amir Mehrpanah</title>
+    <meta name="description" content="${item.shortSummary || item.abstract || 'Publication details.'}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" />
+  </head>
+  <body>
+    <header class="site-header" data-site-header data-base="../../" data-active="publications">${headerHTML}</header>
+
+    <main>
+      <div class="container">
+        <section class="section">
+          <div class="section-title">
+            <span>Publication</span>
+            <span class="tag">${item.meta || ''} · ${item.year || ''}</span>
+          </div>
+          <article class="card post-content">
+            <h1 class="post-title">${item.title || item.folder}</h1>
+            <p class="publication-authors">${item.authors ? renderInlineStrong(item.authors) : ''}</p>`;
+  
+  if (item.heroImage) {
+    html += `<img src="${item.heroImage}" alt="${item.heroImageAlt || item.title || 'Publication cover'}" />`;
+  }
+  
+  html += `<p>${item.abstract ? renderInlineStrong(item.abstract).replace(/\n/g, '<br>') : ''}</p>
+            <p class="publication-actions">`;
+  
+  if (item.pdfUrl) {
+    html += `<a class="button button-icon" href="${item.pdfUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open PDF" title="Open PDF"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a>`;
+  }
+  
+  if (item.videoUrl) {
+    html += `<a class="button button-icon" href="${item.videoUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube video" title="Open YouTube video"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>`;
+  }
+  
+  html += `</p>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer data-site-footer>${footerHTML}</footer>
+
+    <script src="../../assets/js/theme.js"></script>
+  </body>
+</html>`;
+  
+  return html;
+};
+
+// Build individual blog post detail page
+const buildPostDetailPage = (item, headerHTML, footerHTML) => {
+  let html = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>${item.title || item.folder} | Amir Mehrpanah</title>
+    <meta name="description" content="${item.shortSummary || item.summary || 'Blog post.'}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" />
+  </head>
+  <body>
+    <header class="site-header" data-site-header data-base="../../" data-active="blog">${headerHTML}</header>
+
+    <main>
+      <div class="container">
+        <section class="section">
+          <div class="section-title">
+            <span>Blog</span>
+          </div>
+          <article class="card post-content">
+            <p class="post-meta">${item.date || ''} ${item.type ? '| ' + item.type : ''}</p>
+            <h1 class="post-title">${item.title || item.folder}</h1>`;
+  
+  if (item.heroImage) {
+    html += `<img src="${item.heroImage}" alt="${item.heroImageAlt || item.title || 'Post cover'}" />`;
+  }
+  
+  // Use bodyHtml if available (custom HTML content), otherwise use content/summary
+  if (item.bodyHtml) {
+    html += `<div class="post-body">${item.bodyHtml}</div>`;
+  } else if (item.content || item.summary) {
+    const content = item.content ? renderInlineStrong(item.content).replace(/\n/g, '<br>') : renderInlineStrong(item.summary).replace(/\n/g, '<br>');
+    html += `<p class="post-body">${content}</p>`;
+  }
+  
+  html += `</article>
+        </section>
+      </div>
+    </main>
+
+    <footer data-site-footer>${footerHTML}</footer>
+
+    <script src="../../assets/js/theme.js"></script>
+  </body>
+</html>`;
+  
+  return html;
+};
+
 // Main build function
 const main = () => {
   console.log('🏗️  Building static site from templates...\n');
@@ -386,18 +530,20 @@ const main = () => {
   
   // Load blog items
   const blogItems = loadCollectionItems('blog', 'blog/config.json');
-  const blogHTML = buildPostList(blogItems, 3);
-  const blogAllHTML = buildPostList(blogItems);
+  const blogHTML = buildPostList(blogItems, 3, 'blog/');
+  const blogAllHTML = buildPostList(blogItems, null, '');
   
   // Load publication items
   const publicationItems = loadCollectionItems('publications', 'publications/config.json');
-  const publicationHTML = buildPublicationList(publicationItems, 3);
-  const publicationAllHTML = buildPublicationList(publicationItems);
+  const publicationHTML = buildPublicationList(publicationItems, 3, 'publications/');
+  const publicationAllHTML = buildPublicationList(publicationItems, null, '');
   
   // Build header and footer HTML
   const headerHTML = buildHeader('', 'home');
   const headerHTMLBlog = buildHeader('../', 'blog');
   const headerHTMLPublications = buildHeader('../', 'publications');
+  const headerHTMLBlogDetail = buildHeader('../../', 'blog');
+  const headerHTMLPublicationsDetail = buildHeader('../../', 'publications');
   const footerHTML = buildFooter();
   
   // Build index.html
@@ -435,6 +581,24 @@ const main = () => {
   publicationTemplate = publicationTemplate.replace('{{PUBLICATIONS_CONTENT}}', publicationAllHTML);
   publicationTemplate = publicationTemplate.replace('{{FOOTER_CONTENT}}', footerHTML);
   saveHTML('publications/index.html', publicationTemplate);
+  
+  // Build individual publication detail pages
+  publicationItems.forEach(item => {
+    const pubDetailHTML = buildPublicationDetailPage(item, headerHTMLPublicationsDetail, footerHTML);
+    const pubFilePath = path.join('publications', item.folder, 'index.html');
+    saveHTML(pubFilePath, pubDetailHTML);
+  });
+  
+  // Build individual blog post detail pages
+  blogItems.forEach(item => {
+    // Skip template building if useTemplate is false (use existing index.html)
+    if (item.useTemplate === false) {
+      return;
+    }
+    const postDetailHTML = buildPostDetailPage(item, headerHTMLBlogDetail, footerHTML);
+    const postFilePath = path.join('blog', item.folder, 'index.html');
+    saveHTML(postFilePath, postDetailHTML);
+  });
   
   // Build sitemap
   fs.writeFileSync('sitemap.xml', buildSitemap(), 'utf-8');
