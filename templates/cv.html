@@ -22,16 +22,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" />
   </head>
   <body>
-    <header class="site-header" data-site-header><nav class="site-nav"><div class="nav-brand"><a href="index.html">Amir Mehrpanah</a></div><div class="nav-links"><a href="index.html">Home</a><a href="blog/index.html">Blog</a><a href="publications/index.html">Publications</a><a href="cv.html" aria-current="page">CV</a></div><div class="nav-socials"><a href="mailto:amirmehrpanah@gmail.com" title="Email" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://scholar.google.com/citations?user=dXcXce4AAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a><a href="https://orcid.org/0000-0002-6193-7126" title="ORCID" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <circle cx="12" cy="12" r="9"></circle>
-          <path d="M8.2 8.3h.01"></path>
-          <path d="M8.2 10.7v5"></path>
-          <path d="M11 15.7v-7.4h2.8a3.4 3.4 0 0 1 0 6.8H11"></path>
-        </svg>
-      </a><a href="https://github.com/Amir-Mehrpanah/" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-solid fa-github" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/amir-mehrpanah-770070192/" title="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-solid fa-linkedin-in" aria-hidden="true"></i></a></div></nav></header>
+    <header class="site-header" data-site-header data-base="" data-active="cv">{{HEADER_CONTENT}}</header>
 
     <main>
       <div class="container">
@@ -43,13 +38,13 @@
           <div class="grid-2">
             <article class="card">
               <h2 class="post-title">Education</h2>
-              <ul class="list">
+              <ul class="list" data-education>
                 {{EDUCATION_CONTENT}}
               </ul>
             </article>
             <article class="card">
               <h2 class="post-title">Academic Experience</h2>
-              <ul class="list">
+              <ul class="list" data-appointments>
                 {{APPOINTMENTS_CONTENT}}
               </ul>
             </article>
@@ -61,7 +56,7 @@
             <span>Technical Experience</span>
           </div>
           <article class="card">
-            <ul class="list">
+            <ul class="list" data-skills>
               {{SKILLS_CONTENT}}
             </ul>
           </article>
@@ -74,13 +69,13 @@
           <div class="grid-2">
             <article class="card">
               <h2 class="post-title">Awards & Grants</h2>
-              <ul class="list">
+              <ul class="list" data-awards>
                 {{AWARDS_CONTENT}}
               </ul>
             </article>
             <article class="card">
               <h2 class="post-title">Selected Talks</h2>
-              <ul class="list">
+              <ul class="list" data-talks>
                 {{TALKS_CONTENT}}
               </ul>
             </article>
@@ -89,14 +84,8 @@
       </div>
     </main>
 
-    <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2024-2026 Amir Mehrpanah. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer data-site-footer>{{FOOTER_CONTENT}}</footer>
 
     <script src="assets/js/theme.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" />
   </body>
 </html>
