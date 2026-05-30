@@ -45,6 +45,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add index.html cv.html blog/index.html publications/index.html
-          git commit -m "chore: regenerate static pages [skip ci]"
+          git add index.html cv.html blog/index.html publications/index.html sitemap.xml
+          git commit -m "chore: regenerate static pages and sitemap [skip ci]"
           git push
