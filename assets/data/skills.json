@@ -2,15 +2,15 @@
     "items": [
         {
             "title": "SLURM Compute Cluster Adminstration",
-            "meta": "Maintenance duities supervised by <a href=\"link\">Dr. Matteo Gamba</a> (2023-2027)<br><a href=\"link\">Renovation of The Cluster Room</a>"
+            "meta": "Maintenance duities supervised by <a href=\"https://www.matteogamba.me/about/\">Dr. Matteo Gamba</a> (2023-2027)<br> Renovation of The Cluster Room"
         },
         {
             "title": "Gas Pipeline Maintenance Via Data Mining",
-            "meta": "A project aimed at predictive maintenance for National Iran's Gas Company supervisied by <a href=\"link\">Dr. Alireza Fereidunian</a> (2021-2022)"
+            "meta": "A project aimed at predictive maintenance for National Iran's Gas Company supervisied by <a href=\"https://wp.kntu.ac.ir/fereidunian/\">Prof. Alireza Fereidunian</a> (2021-2022)"
         },
         {
             "title": "Research Internsip on Approximate Similarty Search",
-            "meta": "Due to Covid pandemic (2020-2021), I worked remotely at <a href=\"link\">Shomara</a> on approximate nearest neighbor search algorithms, e.g. (FAISS). I did a literature study and classification of methods, and compared different methods, in practice. This was presented as a technical report, with quick-start guides for future solutions at Shomara."
+            "meta": "Due to Covid pandemic (2020-2021), I worked remotely at <a href=\"http://shomara.ir/\">Shomara</a> on approximate nearest neighbor search algorithms, e.g. (FAISS). I did a literature study and classification of methods, and compared different methods, in practice. This was presented as a technical report, with quick-start guides for future solutions at Shomara."
         },
         {
             "title": "Open Source Project: for Training Object Detection Models on Persian License Plates",
@@ -18,7 +18,7 @@
         },
         {
             "title": "C# Unity Game Developer",
-            "meta": "At SodaFanavar game company in Mashhad managed by <a href=\"link\">Prof. Rasoul Ramezanian</a> (2018-2019)<br>Key responsibilities included source code optimization and development."
+            "meta": "At SodaFanavar game company in Mashhad managed by <a href=\"https://sites.google.com/view/ramezanian\">Prof. Rasoul Ramezanian</a> (2018-2019)<br>Key responsibilities included source code optimization and development."
         }
     ]
 }
