@@ -1,0 +1,21 @@
+{
+  "limit": 2,
+  "items": [
+    {
+      "title": "Can we better explain classification with generative models?",
+      "year": "2026",
+      "subtitle": "Research Notes",
+      "type": "Post",
+      "url": "blog/2026-02-22-generative-based-classification/index.html",
+      "summary": "Here I ask whether generative models can help explain decisions made by generative-based classifiers."
+    },
+    {
+      "title": "Our latest paper on robustness of attribution methods is accepted at ICML 2026!",
+      "year": "2026",
+      "subtitle": "Research Notes",
+      "type": "Post",
+      "url": "publications/paper-template.html?paper=Improving%20Adversarial%20Robustness%20of%20Attribution%20via%20Implicit%20Regularization",
+      "summary": "We show that SGD can improve robustness of gradient-based attribution, while attention-based attribution requires special care."
+    }
+  ]
+}

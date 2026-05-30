@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Publication hero placeholder</title>
+  <desc id="desc">Wide abstract placeholder image for a publication page.</desc>
+  <rect width="1200" height="675" fill="#e6e0d6" />
+  <rect x="80" y="90" width="520" height="60" fill="#c9c1b6" />
+  <rect x="80" y="180" width="940" height="24" fill="#d4ccc1" />
+  <rect x="80" y="220" width="840" height="24" fill="#d4ccc1" />
+  <rect x="80" y="260" width="880" height="24" fill="#d4ccc1" />
+  <rect x="80" y="320" width="260" height="160" fill="#b4a99b" />
+  <rect x="380" y="320" width="640" height="20" fill="#c0b6a8" />
+  <rect x="380" y="356" width="560" height="20" fill="#c0b6a8" />
+  <rect x="380" y="392" width="600" height="20" fill="#c0b6a8" />
+</svg>

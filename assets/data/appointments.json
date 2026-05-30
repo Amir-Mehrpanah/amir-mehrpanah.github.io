@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "title": "Teaching Assistant in Advanced Deep Learning",
+      "meta": "A graduate course offered by <a href=\"https://www.kth.se/profile/azizpour\">Prof. Hossein Azizpour</a> at <a href=\"https://www.kth.se/student/kurser/kurs/DD2610?l=en\">KTH Royal Institute of Technology</a> (2022-2027)"
+    },
+    {
+      "title": "Teaching Assistant in Probabilistic Graphical Models",
+      "meta": "A graduate course offered by <a href=\"https://www.kth.se/profile/johnf\">Prof. John Folksson</a> at <a href=\"https://www.kth.se/social/course/DD2420?l=en\">KTH Royal Institute of Technology</a> (2023)"
+    },
+    {
+      "title": "Teaching Assistant in Introduction to Machine Learning",
+      "meta": "A graduate course offered by <a href=\"https://sites.google.com/view/ramezanian\">Prof. Rasoul Ramezanian</a> at <a href=\"https://en.um.ac.ir/\">Ferdowsi University of Mashhad</a> (2021)"
+    },
+    {
+      "title": "Teaching Assistant in Automata Theory",
+      "meta": "An undergraduate course offered by <a href=\"https://sites.google.com/view/ramezanian\">Prof. Rasoul Ramezanian</a> at <a href=\"https://en.um.ac.ir/\">Ferdowsi University of Mashhad</a> (2020)"
+    }
+  ]
+}
