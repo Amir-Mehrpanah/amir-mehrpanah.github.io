@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV | Amir Mehrpanah</title>
+    <meta name="description" content="Academic CV of Amir Mehrpanah: education, appointments, skills, talks, and awards." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://amir-mehrpanah.github.io/cv.html" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Amir Mehrpanah" />
+    <meta property="og:title" content="CV | Amir Mehrpanah" />
+    <meta property="og:description" content="Academic CV of Amir Mehrpanah." />
+    <meta property="og:url" content="https://amir-mehrpanah.github.io/cv.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="CV | Amir Mehrpanah" />
+    <meta name="twitter:description" content="Academic CV of Amir Mehrpanah." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" />
+  </head>
+  <body>
+    <header class="site-header" data-site-header data-base="" data-active="cv">{{HEADER_CONTENT}}</header>
+
+    <main>
+      <div class="container">
+        <section class="section">
+          <div class="section-title">
+            <span>Curriculum Vitae</span>
+            <span class="tag">Updated May 2026</span>
+          </div>
+          <div class="grid-2">
+            <article class="card">
+              <h2 class="post-title">Education</h2>
+              <ul class="list" data-education>
+                {{EDUCATION_CONTENT}}
+              </ul>
+            </article>
+            <article class="card">
+              <h2 class="post-title">Academic Experience</h2>
+              <ul class="list" data-appointments>
+                {{APPOINTMENTS_CONTENT}}
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <span>Technical Experience</span>
+          </div>
+          <article class="card">
+            <ul class="list" data-skills>
+              {{SKILLS_CONTENT}}
+            </ul>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <span>Awards & Grants</span>
+          </div>
+          <div class="grid-2">
+            <article class="card">
+              <h2 class="post-title">Awards & Grants</h2>
+              <ul class="list" data-awards>
+                {{AWARDS_CONTENT}}
+              </ul>
+            </article>
+            <article class="card">
+              <h2 class="post-title">Selected Talks</h2>
+              <ul class="list" data-talks>
+                {{TALKS_CONTENT}}
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer data-site-footer>{{FOOTER_CONTENT}}</footer>
+
+    <script src="assets/js/theme.js"></script>
+  </body>
+</html>
