@@ -14,7 +14,7 @@
       "year": "2026",
       "subtitle": "Research Notes",
       "type": "Post",
-      "url": "publications/paper-template.html?paper=Improving%20Adversarial%20Robustness%20of%20Attribution%20via%20Implicit%20Regularization",
+      "url": "publications/Improving Adversarial Robustness of Attribution via Implicit Regularization/",
       "summary": "We show that SGD can improve robustness of gradient-based attribution, while attention-based attribution requires special care."
     }
   ]
