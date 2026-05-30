@@ -1,0 +1,50 @@
+name: Build Static Site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/data/**'
+      - 'blog/**'
+      - 'publications/**'
+      - 'scripts/build.js'
+      - '.github/workflows/build.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Build static site
+        run: node scripts/build.js
+
+      - name: Check for changes
+        id: verify-changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.verify-changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add index.html cv.html blog/index.html publications/index.html
+          git commit -m "chore: regenerate static pages [skip ci]"
+          git push

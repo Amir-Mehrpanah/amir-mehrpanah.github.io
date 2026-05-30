@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,9 +22,15 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/site.css" />
 </head>
-
 <body>
-  <header class="site-header" data-site-header data-base="../" data-active="publications"></header>
+  <header class="site-header" data-site-header><nav class="site-nav"><div class="nav-brand"><a href="../index.html">Amir Mehrpanah</a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog/index.html">Blog</a><a href="../publications/index.html" aria-current="page">Publications</a><a href="../cv.html">CV</a></div><div class="nav-socials"><a href="mailto:amirmehrpanah@gmail.com" title="Email" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a><a href="https://scholar.google.com/citations?user=dXcXce4AAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a><a href="https://orcid.org/0000-0002-6193-7126" title="ORCID" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M8.2 8.3h.01"></path>
+          <path d="M8.2 10.7v5"></path>
+          <path d="M11 15.7v-7.4h2.8a3.4 3.4 0 0 1 0 6.8H11"></path>
+        </svg>
+      </a><a href="https://github.com/Amir-Mehrpanah/" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-solid fa-github" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/amir-mehrpanah-770070192/" title="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-solid fa-linkedin-in" aria-hidden="true"></i></a></div></nav></header>
 
   <main>
     <div class="container">
@@ -34,20 +39,28 @@
           <span>Publications</span>
           <span class="tag">Updated May 2026</span>
         </div>
-        <div class="publication-list" data-collection="publications" data-card-variant="publication"
-          data-summary-key="shortSummary" data-config="publications/config.json" data-collection-path="publications"
-          data-base="../">
-          <div class="post-meta">Update publications/config.json to populate.</div>
-        </div>
+        <ul class="publication-list">
+          <li><div class="post-meta">2026</div><p class="post-summary">We analyze attribution robustness in CNNs and ViTs, showing that SGD can improve robustness of gradient-based attribution, while attention-based attribution requires kernelized attention for such gains.</p></li>
+<li><div class="post-meta">2025</div><p class="post-summary">The paper proposes a spectral framework to analyze the smoothness–faithfulness trade-off in ReLU network explanations, formalizes the resulting explanation gap, and provides principled regularization with empirical validation.</p></li>
+<li><div class="post-meta">2025</div><p class="post-summary">The position paper argues that spectral analysis provides a principled theoretical foundation for understanding and navigating the ante-hoc versus post-hoc trade-offs in explainable AI.</p></li>
+<li><div class="post-meta">2024</div><p class="post-summary">The paper introduces a probabilistic—spectral framework for analyzing deep network explanations, exposes gradient-induced spectral bias, and proposes principled remedies validated empirically.</p></li>
+<li><div class="post-meta">2024</div><p class="post-summary">A DFT-informed multi-model ML framework accurately predicts and rediscovers optimal methane adsorption on functionalized graphene surfaces while enabling sensitivity analysis and manifold-based screening.</p></li>
+<li><div class="post-meta">2023</div><p class="post-summary">DeeP4med is an autoencoder architecture that performs domain translation between healthy and cancerous gene expression data to identify the key features that drive disease progression.</p></li>
+<li><div class="post-meta">2023</div><p class="post-summary">We introduce a model-agnostic curriculum learning framework for depth estimation that matches state-of-the-art accuracy while reducing inference time by 71%, enabling fast and energy-efficient deployment on resource-constrained autonomous devices.</p></li>
+<li><div class="post-meta">2022</div><p class="post-summary">We extend a probabilistic heteroscedastic label noise model from regression to classification, utilizing loss attenuation to improve robustness against noisy labels.</p></li>
+        </ul>
       </section>
     </div>
   </main>
 
-  <footer data-site-footer></footer>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2024-2026 Amir Mehrpanah. All rights reserved.</p>
+    </div>
+  </footer>
 
-  <script src="../assets/js/layout.js"></script>
-  <script src="../assets/js/collection-list.js"></script>
   <script src="../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" />
 </body>
-
 </html>
