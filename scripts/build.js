@@ -103,14 +103,16 @@ const buildCollectionList = (items, limit = null) => {
 const buildPublicationCard = (item, urlPrefix = null) => {
   let html = '<article class="publication-card"><div class="publication-body">';
   
-  // Title (with optional link)
+  // Title (with clickable anchor that also covers the body)
   html += '<h2 class="post-title">';
   if (item.url) {
     let url = item.url;
     if (typeof urlPrefix === 'string') {
       url = `${urlPrefix}${item.folder}/`;
     }
-    html += `<a href="${url}">${item.folder}</a>`;
+    html += `<a href="${url}" class="publication-title-link">`;
+    html += item.folder;
+    html += '</a>';
   } else {
     html += item.folder;
   }
@@ -158,7 +160,17 @@ const buildPublicationCard = (item, urlPrefix = null) => {
   // Media (card image)
   if (item.cardImage) {
     html += '<div class="publication-media">';
+    if (item.url) {
+      let url = item.url;
+      if (typeof urlPrefix === 'string') {
+        url = `${urlPrefix}${item.folder}/`;
+      }
+      html += `<a href="${url}" class="publication-media-link">`;
+    }
     html += `<img class="publication-image" src="${item.cardImage}" alt="${item.cardImageAlt || item.folder || 'Publication image'}" loading="lazy">`;
+    if (item.url) {
+      html += '</a>';
+    }
     html += '</div>';
   }
   
@@ -169,7 +181,18 @@ const buildPublicationCard = (item, urlPrefix = null) => {
 const buildPostCard = (item, urlPrefix = null) => {
   // Check if item has media for class
   const hasMedia = !!item.cardImage;
-  let html = `<article class="post-card${hasMedia ? ' has-media' : ''}"><div>`;
+  
+  let url = '';
+  if (item.url) {
+    url = item.url;
+    if (typeof urlPrefix === 'string') {
+      url = `${urlPrefix}${item.folder}/`;
+    }
+  }
+  
+  // Wrap in anchor tag for full card clickability
+  let html = url ? `<a href="${url}" class="card-link">` : '<div class="card-link">';
+  html += `<article class="post-card${hasMedia ? ' has-media' : ''}"><div>`;
   
   // Meta (date | type)
   let metaText = '';
@@ -186,18 +209,8 @@ const buildPostCard = (item, urlPrefix = null) => {
     html += `<div class="post-meta">${metaText}</div>`;
   }
   
-  // Title (with optional link)
-  html += '<h2 class="post-title">';
-  if (item.url) {
-    let url = item.url;
-    if (typeof urlPrefix === 'string') {
-      url = `${urlPrefix}${item.folder}/`;
-    }
-    html += `<a href="${url}">${item.title}</a>`;
-  } else {
-    html += item.title;
-  }
-  html += '</h2>';
+  // Title (no link since anchor wraps entire card)
+  html += `<h2 class="post-title">${item.title}</h2>`;
   
   // Summary
   const summary = item.shortSummary || item.summary || '';
@@ -215,6 +228,7 @@ const buildPostCard = (item, urlPrefix = null) => {
   }
   
   html += '</article>';
+  html += url ? '</a>' : '</div>';
   return html;
 };
 

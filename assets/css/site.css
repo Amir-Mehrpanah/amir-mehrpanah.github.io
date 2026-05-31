@@ -391,12 +391,27 @@ main {
   gap: 15px;
 }
 
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.card-link article {
+  height: 100%;
+}
+
 .post-card {
   padding: 15px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--card);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post-card.has-media {
@@ -407,8 +422,7 @@ main {
 }
 
 .post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
+  /* hover styles removed, handled by .card-link parent */
 }
 
 .post-title {
@@ -502,6 +516,44 @@ main {
   background: var(--card);
   box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.publication-body {
+  /* Removed position: relative and z-index to allow title-link pseudo-element to stretch to publication-card */
+}
+
+.post-title {
+  margin: 0;
+}
+
+.publication-title-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.publication-title-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.publication-media-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 2;
+}
+
+.publication-actions {
+  position: relative;
+  z-index: 2;
 }
 
 .publication-card:hover {
@@ -539,6 +591,7 @@ main {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 16px;
+  width: fit-content;
 }
 
 .publication-authors {
