@@ -483,10 +483,10 @@ const buildPostDetailPage = (item, headerHTML, footerHTML) => {
       <div class="container">
         <section class="section">
           <div class="section-title">
-            <span>Blog</span>
+            <span>${item.meta ? (item.meta.includes('|') ? item.meta.split('|')[1].trim() : 'Blog') : (item.type || 'Blog')}</span>
+            <span class="tag">${item.meta ? (item.meta.includes('|') ? item.meta.split('|')[0].trim() : item.meta) : (item.date || '')}</span>
           </div>
           <article class="card post-content">
-            <p class="post-meta">${item.date || ''} ${item.type ? '| ' + item.type : ''}</p>
             <h1 class="post-title">${item.title || item.folder}</h1>`;
   
   if (item.heroImage) {
