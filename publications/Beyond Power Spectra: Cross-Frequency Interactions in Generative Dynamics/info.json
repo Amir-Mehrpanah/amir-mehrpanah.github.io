@@ -1,0 +1,11 @@
+{
+    "meta": "FoGeN Workshop at International Conference on Machine Learning (ICML)",
+    "year": "2026",
+    "authors": "**Amir Mehrpanah**, Mohammed Al-Jaff, Matteo Gamba, Hossein Azizpour",
+    "shortSummary": "We demonstrate that cross-frequency interactions, rather than standard marginal spectral statistics, are essential for characterizing and distinguishing the learned dynamics of deep generative models.",
+    "heroImage": "/publications/Beyond Power Spectra: Cross-Frequency Interactions in Generative Dynamics/hero.png",
+    "cardImage": "/publications/Beyond Power Spectra: Cross-Frequency Interactions in Generative Dynamics/card.png",
+    "heroImageAlt": "Publication hero image placeholder",
+    "cardImageAlt": "Publication cover placeholder",
+    "abstract": "Spectral analysis of deep generative models typically relies on marginal statistics, such as the power spectral density, implicitly assuming that per-frequency behavior suffices to characterize generative dynamics. We revisit this assumption and ask whether marginal spectral quantities are sufficient to describe the transformations learned by modern generative models. We introduce an interventional measure of spectral sensitivity that probes directional influence between frequencies and decomposes model behavior into diagonal (marginal) and off-diagonal (interaction) components. In a controlled Gaussian setting with known spectral structure, we verify that the proposed measure recovers the expected decoupling of frequencies. Applying this framework to flow matching models trained on frequency-masked CIFAR-10 and to denoising diffusion models (DDPM) trained on CelebA, we find that diagonal responses vary little across models despite substantial differences in the training data. In both cases, off-diagonal sensitivities clearly reflect the underlying perturbations, suggesting that marginal spectral statistics may be insufficient to fully characterize learned generative dynamics, and that cross-frequency interactions play a key role in their description."
+}
