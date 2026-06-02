@@ -364,10 +364,11 @@ const buildSitemap = () => {
   };
   
   // Main pages
-  addUrl(`${baseUrl}/`, '2026-05-30', 'weekly', 1.0);
-  addUrl(`${baseUrl}/cv.html`, '2026-05-30', 'monthly', 0.9);
-  addUrl(`${baseUrl}/blog/`, '2026-05-30', 'monthly', 0.9);
-  addUrl(`${baseUrl}/publications/`, '2026-05-30', 'monthly', 0.9);
+  lastmod = new Date().toISOString().split('T')[0]; // Use current date for lastmod
+  addUrl(`${baseUrl}/`, lastmod, 'weekly', 1.0);
+  addUrl(`${baseUrl}/cv.html`, lastmod, 'monthly', 0.9);
+  addUrl(`${baseUrl}/blog/`, lastmod, 'monthly', 0.9);
+  addUrl(`${baseUrl}/publications/`, lastmod, 'monthly', 0.9);
   
   // Individual blog posts
   const blogItems = loadCollectionItems('blog', 'blog/config.json');

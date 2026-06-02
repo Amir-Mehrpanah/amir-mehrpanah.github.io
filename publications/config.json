@@ -1,6 +1,7 @@
 {
     "comment": "regenerate by running node scripts/generate-publication-config.js",
     "folders": [
+        "Beyond Power Spectra: Cross-Frequency Interactions in Generative Dynamics",
         "Improving Adversarial Robustness of Attribution via Implicit Regularization",
         "On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations",
         "Toward a Principled Theory of XAI via Spectral Analysis",
