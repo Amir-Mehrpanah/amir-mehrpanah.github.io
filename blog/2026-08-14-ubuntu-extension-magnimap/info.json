@@ -1,0 +1,9 @@
+{
+    "title": "GNOME Extension: Magnimap",
+    "meta": "Aug 14, 2026 | Blog",
+    "shortSummary": "Magnimap is a GNOME extension that provides better features for the magnifier tool in GNOME.",
+    "date": "2026-08-14",
+    "cardImage": "/blog/2026-08-14-ubuntu-extension-magnimap/card.png",
+    "cardImageAlt": "Publication hero image placeholder",
+    "bodyHtml": "Magnimap is a GNOME extension that provides better features for the magnifier tool in GNOME. It allows users to customize the magnification level, it has a mini-map that shows the entire screen in a corner, and most importantly, it has a dead zone feature that allows users to define areas of the screen that should not respond to mouse movements. This is a generalization of keeping the mouse in the center of the screen or letting the mouse move the screen when touching the edges. I felt good today when I realized that it has been downloaded 15 times! You can find it <a href=\"https://extensions.gnome.org/extension/10563/magnimap/\">here</a>."
+}
