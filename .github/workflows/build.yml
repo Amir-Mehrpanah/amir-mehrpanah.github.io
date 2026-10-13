@@ -5,9 +5,13 @@ on:
     branches:
       - main
     paths:
-      - 'assets/data/**'
+      - 'assets/**'
       - 'blog/**'
       - 'publications/**'
+      - 'templates/**'
+      - '*.html'
+      - '*.xml'
+      - '*.pdf'
       - 'scripts/build.js'
       - '.github/workflows/build.yml'
 
@@ -45,4 +49,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
-
